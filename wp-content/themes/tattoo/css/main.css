@@ -1,0 +1,219 @@
+body {
+  font-size: 14px;
+  background: #000;
+  padding: 0;
+  margin: 0;
+  color: #fff; }
+
+ul {
+  list-style: none; }
+  ul li {
+    list-style: none; }
+
+body.error404 .error-404 {
+  min-height: calc(100vh - 130px);
+  position: relative; }
+  body.error404 .error-404 .img-404 {
+    display: block;
+    width: 100%;
+    height: auto; }
+    body.error404 .error-404 .img-404 img {
+      width: 100%; }
+
+header, footer {
+  padding: 20px 0 0 0; }
+  header nav, footer nav {
+    float: left; }
+    header nav:last-child, footer nav:last-child {
+      float: right; }
+
+section#main_page {
+  min-height: calc(100vh - 125px);
+  background: url("/wp-content/uploads/2017/04/4.jpg") no-repeat 50% 50%/cover; }
+
+section#primary {
+  margin-top: 50px;
+  min-height: calc(100vh - 160px); }
+
+.social-navigation ul {
+  list-style: none;
+  padding: 0;
+  margin: 0; }
+  .social-navigation ul li {
+    float: left;
+    margin: 0 15px; }
+    .social-navigation ul li span {
+      display: none; }
+
+.social-navigation a {
+  color: #fff;
+  display: block;
+  height: 35px;
+  position: relative;
+  width: 35px; }
+  .social-navigation a:before {
+    content: "\f000";
+    font-family: FontAwesome;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
+    font-size: 24px;
+    height: 33px;
+    line-height: 33px;
+    text-align: center;
+    width: 33px;
+    color: #fff;
+    position: absolute; }
+  .social-navigation a:hover:before, .social-navigation a:focus:before {
+    color: #007acc; }
+  .social-navigation a:hover, .social-navigation a:focus {
+    outline: none;
+    text-decoration: none; }
+
+.social-navigation a[href*="facebook.com"]:before {
+  content: "\f230"; }
+
+.social-navigation a[href*="vk.com"]:before {
+  content: "\f189"; }
+
+.social-navigation a[href*="instagram.com"]:before {
+  content: "\f16d"; }
+
+.main-navigation ul {
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 10px 0 0 0; }
+  .main-navigation ul li {
+    display: inline-block;
+    margin: 0 15px;
+    text-transform: uppercase; }
+    .main-navigation ul li a {
+      color: #fff; }
+      .main-navigation ul li a:hover {
+        color: red;
+        text-decoration: none; }
+
+#grid {
+  padding: 0;
+  margin: 20px 0;
+  list-style: none; }
+  #grid:after {
+    content: '';
+    display: block;
+    clear: both; }
+
+.grid-item {
+  float: left;
+  width: 30%;
+  margin-bottom: 15px;
+  height: auto;
+  list-style: none;
+  border: 1px solid #fff; }
+
+.jp-carousel-close-hint {
+  text-align: right !important; }
+  .jp-carousel-close-hint span {
+    display: inline !important;
+    font-size: 28px !important; }
+
+h1.entry-title {
+  text-align: center;
+  text-transform: uppercase; }
+
+.slideshowlink {
+  display: none !important; }
+
+/*
+#load_more_gs{
+	width: 53px;
+	padding:50px 0;
+	margin:0 auto;
+}
+
+.cssload-container{
+	position:relative;
+}
+
+.cssload-whirlpool,
+.cssload-whirlpool::before,
+.cssload-whirlpool::after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	border: 1px solid rgb(255,255,255);
+	border-left-color: rgb(0,225,255);
+	border-radius: 974px;
+	-o-border-radius: 974px;
+	-ms-border-radius: 974px;
+	-webkit-border-radius: 974px;
+	-moz-border-radius: 974px;
+}
+
+.cssload-whirlpool {
+	margin: -24px 0 0 -24px;
+	height: 49px;
+	width: 49px;
+	animation: cssload-rotate 1150ms linear infinite;
+	-o-animation: cssload-rotate 1150ms linear infinite;
+	-ms-animation: cssload-rotate 1150ms linear infinite;
+	-webkit-animation: cssload-rotate 1150ms linear infinite;
+	-moz-animation: cssload-rotate 1150ms linear infinite;
+}
+
+.cssload-whirlpool::before {
+	content: "";
+	margin: -22px 0 0 -22px;
+	height: 43px;
+	width: 43px;
+	animation: cssload-rotate 1150ms linear infinite;
+	-o-animation: cssload-rotate 1150ms linear infinite;
+	-ms-animation: cssload-rotate 1150ms linear infinite;
+	-webkit-animation: cssload-rotate 1150ms linear infinite;
+	-moz-animation: cssload-rotate 1150ms linear infinite;
+}
+
+.cssload-whirlpool::after {
+	content: "";
+	margin: -28px 0 0 -28px;
+	height: 55px;
+	width: 55px;
+	animation: cssload-rotate 2300ms linear infinite;
+	-o-animation: cssload-rotate 2300ms linear infinite;
+	-ms-animation: cssload-rotate 2300ms linear infinite;
+	-webkit-animation: cssload-rotate 2300ms linear infinite;
+	-moz-animation: cssload-rotate 2300ms linear infinite;
+}
+
+
+
+@keyframes cssload-rotate {
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+@-o-keyframes cssload-rotate {
+	100% {
+		-o-transform: rotate(360deg);
+	}
+}
+
+@-ms-keyframes cssload-rotate {
+	100% {
+		-ms-transform: rotate(360deg);
+	}
+}
+
+@-webkit-keyframes cssload-rotate {
+	100% {
+		-webkit-transform: rotate(360deg);
+	}
+}
+
+@-moz-keyframes cssload-rotate {
+	100% {
+		-moz-transform: rotate(360deg);
+	}
+}
+*/

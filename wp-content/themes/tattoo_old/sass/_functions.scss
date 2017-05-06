@@ -1,0 +1,157 @@
+//@import 'compass';
+@import 'bootstrap/bootstrap/_variables';
+
+@mixin break-point($point){
+  @if $point == lg{
+    @media only screen and (max-width:$screen-md-max){
+      @content;
+    }
+  }
+  @else if $point == md{
+    @media only screen and (max-width:$screen-sm-max){
+      @content;
+    }
+  }
+  @else if $point == sm{
+    @media only screen and (max-width:$screen-xs-max){
+      @content;
+    }
+  }
+  @else if $point == xs{
+    @media only screen and (max-width:$screen-xs-min - 1){
+      @content;
+    }
+  }
+  @else{
+    @media only screen and (max-width:$point){
+      @content;
+    }
+  }
+}
+@mixin transform($transform) {
+  -webkit-transform: $transform;
+  -moz-transform: $transform;
+  -ms-transform: $transform;
+  -o-transform: $transform;
+  transform: $transform;
+}
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  -o-transition: $transition;
+  transition: $transition;
+}
+@mixin centering {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  @include transform(translate(-50%, -50%));
+}
+@mixin centering-x {
+  position: relative;
+  left: 50%;
+  @include transform(translateX(-50%));
+}
+@mixin centering-y {
+  position: absolute;
+  top: 50%;
+  @include transform(translateY(-50%));
+}
+@mixin round($diameter){
+  display: block;
+  width: $diameter;
+  height: $diameter;
+  @include border-radius(100%);
+}
+@mixin rhomb{
+  @include transform(rotate(-45deg));
+}
+
+@mixin topix($name){
+  body{
+    background-image: url('images/#{$name}-1170px.png');
+    background-position: top center;
+    background-size: 1300px auto;
+    background-repeat: no-repeat;
+  }
+  @media (max-width: 1199px) {
+    body{
+      background-image: url("images/#{$name}-970px.png");
+    }
+  }
+  @media (max-width: 991px) {
+    body{
+      background-image: url("images/#{$name}-750px.png");
+    }
+  }
+  @media (max-width: 767px) {
+    body{
+      background-image: url("images/#{$name}-480px.png");
+      background-size: 480px auto;
+    }
+  }
+  @media (max-width: 479px) {
+    body{
+      background-image: url("images/#{$name}-320px.png");
+      background-size: 320px auto;
+    }
+  }
+}
+
+@mixin spread($size, $orientation){
+  display: block;
+  background-color: #fff;
+  width: $size;
+  height: $size;
+  mix-blend-mode: lighten;
+  @if $orientation == top or $orientation == bottom {
+    @include centering-x;
+    top: auto;
+  }@else if $orientation == left or $orientation == right {
+    @include centering-y;
+    left: auto;
+  }
+  #{$orientation}: 0;
+  position: absolute;
+  &:before, &:after{
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    display: block;
+    position: absolute;
+    @if $orientation == top{
+      left: -50%;
+      top: 0;
+      border-radius: 50% 50% 0 0;
+    }@else if $orientation == right{
+      left: 0;
+      top: -50%;
+      border-radius: 0 50% 50% 0;
+    }@else if $orientation == bottom{
+      left: -50%;
+      top: 0;
+      border-radius: 0 0 50% 50%;
+    }@else if $orientation == left{
+      left: 0;
+      top: -50%;
+      border-radius: 50% 0 0 50%;
+    }
+  }
+  &:after{
+    @if $orientation == top or $orientation == bottom {
+      top: 0;
+      left: 50%;
+    }@else if $orientation == left or $orientation == right {
+      left: 0;
+      top: 50%;
+    }
+  }
+}
+@mixin border-radius($border-radius){
+  -o-border-radius: $border-radius;
+  -ms-border-radius: $border-radius;
+  -webkit-border-radius: $border-radius;
+  border-radius: $border-radius;
+}

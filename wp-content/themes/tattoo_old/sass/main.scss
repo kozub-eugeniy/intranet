@@ -1,0 +1,7 @@
+@import "_functions";
+
+body {
+	font-size: 14px;
+	background: #000;
+	@include centering-x;
+}

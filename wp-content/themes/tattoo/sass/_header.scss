@@ -1,0 +1,49 @@
+header {
+  position: absolute;
+  top: 65px;
+  left: 50%;
+  @include transform(translate(-50%));
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+  .big {
+    width: 100%;
+    padding: 0;
+    background: rgba(255,255,254, 0.8);
+  }
+  .nav_list {
+    padding: 30px 0;
+    list-style: none;
+    margin: 0;
+    text-align: center;
+    width: 100%;
+    li {
+      display: inline-block;
+      float: none;
+      margin-right: 35px;
+      &:last-child {margin: 0;}
+      a {
+        color: #000;
+        font-family: "Yanone Kaffeesatz";
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 18px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  .btn-group {
+    display: none;
+    @include break-point(sm){
+      display: block;
+    }
+  }
+  .mini {
+    width: 100%;
+    display: none;
+    @include centering-x;
+    position: fixed;
+    top: 20px;
+    background: rgba(255,255,254, 0.8);
+  }
+}
